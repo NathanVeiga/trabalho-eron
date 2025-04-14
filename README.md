@@ -34,9 +34,112 @@ Push no Github.
 Comandos utilizados durante a realização
 
 Comandos Nathan:
-$ git add.
+
+compuni@maker275 MINGW64 ~
+$ git config --global --unset user.name
+
+compuni@maker275 MINGW64 ~
+$ git config --global --unset user.email
+
+compuni@maker275 MINGW64 ~
+$ ls -al ~/.ssh
+total 25
+drwxr-xr-x 1 compuni 1049089   0 Mar 31 20:19 ./
+drwxr-xr-x 1 compuni 1049089   0 Apr 14 19:18 ../
+-rw-r--r-- 1 compuni 1049089 828 Mar 31 19:49 known_hosts
+-rw-r--r-- 1 compuni 1049089  92 Mar 31 19:49 known_hosts.old
+
+compuni@maker275 MINGW64 ~
+$ rm -f ~/.ssh/id_rsa*
+
+compuni@maker275 MINGW64 ~
+$ git config --global user.name "NathanVeiga"
+
+compuni@maker275 MINGW64 ~
+$ git config --global user.email "nathanveiga@edu.unifil.com"
+
+compuni@maker275 MINGW64 ~
+$ ssh-keygen -t rsa -b 4096 -C "nathanveiga@edu.unifil.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/compuni/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/compuni/.ssh/id_rsa
+Your public key has been saved in /c/Users/compuni/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:KI4zsGVgdoS04C+8XJP/bM2azwaa1cH6M3rN+0UdSBM nathanveiga@edu.unifil.com
+The key's randomart image is:
++---[RSA 4096]----+
+|o...         E.  |
+|o.o         . o  |
+|.= .    .    . . |
+|+.o .  . o      o|
+|.oo=. . S .    ..|
+|.=+oo. + .    .  |
+|.o+ ..+ = o    . |
+|   o oo.oO o  .  |
+|      .**oo.o.   |
++----[SHA256]-----+
+
+compuni@maker275 MINGW64 ~
+$ eval "$(ssh-agent -s)"
+Agent pid 1760
+
+compuni@maker275 MINGW64 ~
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/compuni/.ssh/id_rsa (nathanveiga@edu.unifil.com)
+
+compuni@maker275 MINGW64 ~
+$ clip < ~/.ssh/id_rsa.pub
+
+compuni@maker275 MINGW64 ~
+$ ssh -T git@github.com
+Hi NathanVeiga! You've successfully authenticated, but GitHub does not provide shell access.
+
+compuni@maker275 MINGW64 ~
+$ git clone git@github.com:NathanVeiga/trabalho-eron.git
+Cloning into 'trabalho-eron'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (6/6), done.
+
+compuni@maker275 MINGW64 ~
+$ cd repositorio
+bash: cd: repositorio: No such file or directory
+
+compuni@maker275 MINGW64 ~
+$ cd trabalho-eron
+
+compuni@maker275 MINGW64 ~/trabalho-eron (main)
+$ git add .
+warning: LF will be replaced by CRLF in algoritmo.por.
+The file will have its original line endings in your working directory
+
+compuni@maker275 MINGW64 ~/trabalho-eron (main)
 $ git commit -m "Criação do algortimo(incompleto) verificador de números ímpares e pares"
+[main 04f3028] Criação do algortimo(incompleto) verificador de números ímpares e pares
+ 1 file changed, 21 insertions(+)
+ create mode 100644 algoritmo.por
+
+compuni@maker275 MINGW64 ~/trabalho-eron (main)
 $ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 616 bytes | 616.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:NathanVeiga/trabalho-eron.git
+   acad583..04f3028  main -> main
+
+compuni@maker275 MINGW64 ~/trabalho-eron (main)
+$ ^C
+
+compuni@maker275 MINGW64 ~/trabalho-eron (main)
+$
+
 
 Comandos Luiz:
 
