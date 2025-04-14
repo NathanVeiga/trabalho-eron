@@ -12,10 +12,12 @@ programa {
     se (n>=0){
       escreva("\nEsse número é inteiro e positivo, então poderemos verificar se ele é par ou não!")
     }senao{
-      escreva("\nNúmero invalido. Tente novamente!")
+      escreva("\nNúmero invalido.")
     }
     se(n%2==0){
       escreva("\nNúmero par!")
+    } senao se((n%2!=0) e (n>0)){
+      escreva("\nEsse número é Ímpar!")
     }
   }
 }
